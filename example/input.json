@@ -1,0 +1,12 @@
+{
+  "molecule_file": "h2o.mol",
+  "distance": {"start": 4.0, "end": 4.0, "step": 0.2},
+  "angles": {
+    "alpha": {"start": 0, "end": 90, "step": 30},
+    "beta": {"start": 0, "end": 90, "step": 30},
+    "gamma": {"start": 0, "end": 90, "step": 30}
+  },
+  "initial_shift": [5.0, 5.0, 5.0],
+  "output_folder": "out",
+  "box_size": [[15.0, 0.0, 0.0], [0.0, 15.0, 0.0], [0.0, 0.0, 15.0]]
+}

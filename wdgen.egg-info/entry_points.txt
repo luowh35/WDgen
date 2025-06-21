@@ -1,0 +1,2 @@
+[console_scripts]
+wdgen = wdgen.main:main

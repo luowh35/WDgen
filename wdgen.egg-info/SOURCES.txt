@@ -1,0 +1,16 @@
+README.md
+setup.py
+wdgen/__init__.py
+wdgen/collect.py
+wdgen/dipole_generator.py
+wdgen/generate_structure.py
+wdgen/main.py
+wdgen/molecule_reader.py
+wdgen/poscar_writer.py
+wdgen/transform_utils.py
+wdgen.egg-info/PKG-INFO
+wdgen.egg-info/SOURCES.txt
+wdgen.egg-info/dependency_links.txt
+wdgen.egg-info/entry_points.txt
+wdgen.egg-info/requires.txt
+wdgen.egg-info/top_level.txt
