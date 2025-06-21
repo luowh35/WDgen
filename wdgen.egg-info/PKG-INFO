@@ -10,3 +10,14 @@ Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
+
+git clone https://github.com/luowh35/WDgen.git
+
+pip install .
+
+cd example
+
+wdgen gen -p input.json
+wdgen collect -i out -o trj.xyz
+
+

@@ -26,16 +26,21 @@ class PoscarCollector:
     @staticmethod
     def collect(input_folder, output_file):
         poscar_files = sorted(f for f in os.listdir(input_folder) if f.startswith("POSCAR"))
-        
+
         with open(output_file, "w") as fout:
             for file in poscar_files:
                 filepath = os.path.join(input_folder, file)
                 atoms = read(filepath, format="vasp")
                 lattice = PoscarCollector.read_lattice_from_poscar(filepath)
                 metadata = PoscarCollector.extract_metadata(file)
-
+    
                 fout.write(f"{len(atoms)}\n")
+
                 lattice_str = " ".join(" ".join(f"{v:.5f}" for v in vec) for vec in lattice)
-                fout.write(f'Lattice="{lattice_str}" Properties=species:S:1:pos:R:3\n')
+                fout.write(f'Lattice="{lattice_str}" Properties=species:S:1:pos:R:3 config_type="d{metadata["distance"]:.2f}_a{metadata["alpha"]}_b{metadata["beta"]}_g{metadata["gamma"]}"\n')
+
                 for sym, pos in zip(atoms.get_chemical_symbols(), atoms.get_positions()):
                     fout.write(f"{sym} {pos[0]:.5f} {pos[1]:.5f} {pos[2]:.5f}\n")
+
+ 
+
